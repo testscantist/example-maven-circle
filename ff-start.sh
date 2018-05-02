@@ -35,7 +35,7 @@ cat raw-output.txt
 echo "Uploading report at $SCANTIST_IMPORT_URL"
 
 #Log the curl version used
-python3 --version
+python -V
 
 curl --version
 
