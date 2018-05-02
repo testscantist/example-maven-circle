@@ -29,9 +29,12 @@ ls
 echo $cwd
 # python3 TreeBuilder.py $cwd
 pyenv versions
+
 pyenv global 3.6.2
-python TreeBuilder.py 
-cat raw-output.txt $cwd
+
+python TreeBuilder.py $cwd
+
+cat raw-output.txt
 
 #Log that the script download is complete and proceeding
 echo "Uploading report at $SCANTIST_IMPORT_URL"
