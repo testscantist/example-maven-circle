@@ -121,7 +121,7 @@ def main(current_path):
     print(ending_line)
     print(starting_line)
     print(package_manager)
-    # generate_package_manager_log(project)
+    generate_package_manager_log(project)
     data_file_path = os.path.join(current_path[0],TRAVIS_LOG_FILE)
     if os.path.isfile(data_file_path):
         print('datafile exists')
