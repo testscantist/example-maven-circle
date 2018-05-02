@@ -27,7 +27,7 @@ chmod a+x TreeBuilder
 cwd=$(pwd)
 ls
 echo $cwd
-./TreeBuilder $cwd
+python3.6.2 TreeBuilder.py $cwd
 
 cat raw-output.txt
 
