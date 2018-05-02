@@ -27,7 +27,7 @@ chmod a+x TreeBuilder
 cwd=$(pwd)
 ls
 echo $cwd
-python3.6.2 TreeBuilder.py $cwd
+python3 TreeBuilder.py $cwd
 
 cat raw-output.txt
 
@@ -35,7 +35,7 @@ cat raw-output.txt
 echo "Uploading report at $SCANTIST_IMPORT_URL"
 
 #Log the curl version used
-python -V
+python3 -V
 
 curl --version
 
