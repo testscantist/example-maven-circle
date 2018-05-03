@@ -25,7 +25,7 @@ repo_name=$CIRCLE_PROJECT_USERNAME"/"$CIRCLE_PROJECT_REPONAME
 commit_sha=$CIRCLE_SHA1
 branch=$CIRCLE_BRANCH
 build_time=$(date +"%s")
-if [ -z ${CI_PULL_REQUEST+x} ]; then pull_request="false"; else pull_request=$CI_PULL_REQUEST; fi
+if [ -z ${CIRCLE_PR_NUMBER+x} ]; then pull_request="false"; else pull_request=$CIRCLE_PR_NUMBER; fi
 cwd=$(pwd)
 
 echo $repo_name
