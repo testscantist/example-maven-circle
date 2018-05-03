@@ -4,3 +4,4 @@
 /.project
 .DS_Store
 __pycache__/*
+raw-output.txt
