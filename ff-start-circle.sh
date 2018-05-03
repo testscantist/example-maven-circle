@@ -32,7 +32,7 @@ pyenv versions
 
 pyenv global 3.6.2
 
-python TreeBuilder.py $cwd" "$CIRCLE_PROJECT_USERNAME"/"$CIRCLE_PROJECT_REPONAME" "$commit_sha
+python TreeBuilder.py $cwd $repo_name $commit_sha
 
 #Log that the script download is complete and proceeding
 echo "Uploading report at $SCANTIST_IMPORT_URL"
