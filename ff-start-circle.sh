@@ -15,6 +15,7 @@ show_project_info() {
   echo "CI_PULL_REQUEST $CI_PULL_REQUEST"
   echo "CIRCLE_PROJECT_USERNAME $CIRCLE_PROJECT_USERNAME"
   echo "CIRCLE_PROJECT_REPONAME $CIRCLE_PROJECT_REPONAME"
+  echo "CIRCLE_PR_NUMBER $CIRCLE_PR_NUMBER"
   echo "=================project info====================="
 }
 echo "=================show_project_info================="
@@ -22,6 +23,9 @@ show_project_info
 
 repo_name=$CIRCLE_PROJECT_USERNAME"/"$CIRCLE_PROJECT_REPONAME
 commit_sha=$CIRCLE_SHA1
+branch=$CIRCLE_BRANCH
+build_time=$(date +"%s")
+if [ -z ${CI_PULL_REQUEST+x} ]; then pull_request="false"; else pull_request=$CI_PULL_REQUEST; fi
 
 ls
 
@@ -32,7 +36,7 @@ pyenv versions
 
 pyenv global 3.6.2
 
-python TreeBuilder.py $cwd $repo_name $commit_sha
+python TreeBuilder.py $cwd $repo_name $commit_sha $branch $pull_request $build_time
 
 #Log that the script download is complete and proceeding
 echo "Uploading report at $SCANTIST_IMPORT_URL"
