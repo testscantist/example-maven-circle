@@ -20,6 +20,9 @@ show_project_info() {
 echo "=================show_project_info================="
 show_project_info
 
+repo_name=$CIRCLE_PROJECT_USERNAME"/"$CIRCLE_PROJECT_REPONAME
+commit_sha=$CIRCLE_SHA1
+
 ls
 
 cwd=$(pwd)
@@ -29,7 +32,7 @@ pyenv versions
 
 pyenv global 3.6.2
 
-python TreeBuilder.py $cwd $CIRCLE_PROJECT_USERNAME"/"$CIRCLE_PROJECT_REPONAME $CIRCLE_SHA1
+python TreeBuilder.py $cwd" "$CIRCLE_PROJECT_USERNAME"/"$CIRCLE_PROJECT_REPONAME" "$commit_sha
 
 #Log that the script download is complete and proceeding
 echo "Uploading report at $SCANTIST_IMPORT_URL"
