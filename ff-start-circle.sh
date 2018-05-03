@@ -26,10 +26,13 @@ commit_sha=$CIRCLE_SHA1
 branch=$CIRCLE_BRANCH
 build_time=$(date +"%s")
 if [ -z ${CI_PULL_REQUEST+x} ]; then pull_request="false"; else pull_request=$CI_PULL_REQUEST; fi
-
-ls
-
 cwd=$(pwd)
+
+echo $repo_name
+echo $commit_sha
+echo $branch
+echo $pull_request
+echo $build_time
 echo $cwd
 
 pyenv versions
